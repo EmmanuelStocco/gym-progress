@@ -115,56 +115,168 @@
     {
       "treino": "Superiores",
       "exercicio": "Desenvolvimento"
+    },
+    {
+      "treino": "Outros",
+      "exercicio": "Kettlebell swing"
+    },
+    {
+      "treino": "Outros",
+      "exercicio": "Flexão de punho"
+    },
+    {
+      "treino": "Outros",
+      "exercicio": "Flexão de punho inversa"
+    },
+    {
+      "treino": "Outros",
+      "exercicio": "Abdominal frontal"
+    },
+    {
+      "treino": "Outros",
+      "exercicio": "Abdominal lateral"
+    },
+    {
+      "treino": "Outros",
+      "exercicio": "Abdominal infra"
     }
   ],
   "registros": [
     {
-      "data": "2025-08-25",
+      "data": "2025-08-01",
       "treino": "Superiores",
       "exercicio": "Supino Reto com Halteres",
       "serie": 1,
       "reps": 10,
-      "peso": 8
+      "peso": 20
     },
     {
-      "data": "2025-08-25",
+      "data": "2025-08-01",
       "treino": "Superiores",
       "exercicio": "Supino Reto com Halteres",
       "serie": 2,
-      "reps": 10,
-      "peso": 9
+      "reps": 8,
+      "peso": 22
     },
     {
-      "data": "2025-08-25",
+      "data": "2025-08-05",
       "treino": "Superiores",
       "exercicio": "Supino Reto com Halteres",
-      "serie": 3,
-      "reps": 10,
-      "peso": 10
+      "serie": 1,
+      "reps": 9,
+      "peso": 23
     },
     {
-      "data": "2025-08-25",
-      "treino": "A (Peito, Triceps)",
-      "exercicio": "Supino Reto Maquina",
+      "data": "2025-08-10",
+      "treino": "Superiores",
+      "exercicio": "Supino Reto com Halteres",
+      "serie": 1,
+      "reps": 8,
+      "peso": 21
+    },
+    {
+      "data": "2025-08-15",
+      "treino": "Superiores",
+      "exercicio": "Supino Reto com Halteres",
       "serie": 1,
       "reps": 10,
-      "peso": 30
+      "peso": 25
     },
     {
-      "data": "2025-08-25",
-      "treino": "Superiores",
-      "exercicio": "Supino Reto com Halteres",
-      "serie": 2,
-      "reps": 10,
-      "peso": 35
-    },
-    {
-      "data": "2025-08-25",
-      "treino": "Superiores",
-      "exercicio": "Supino Reto com Halteres",
-      "serie": 3,
-      "reps": 10,
+      "data": "2025-09-03",
+      "treino": "B (Costas, Biceps)",
+      "exercicio": "Puxada Fechada pegada Neutra",
+      "serie": 1,
+      "reps": 12,
       "peso": 40
+    },
+    {
+      "data": "2025-09-07",
+      "treino": "B (Costas, Biceps)",
+      "exercicio": "Puxada Fechada pegada Neutra",
+      "serie": 1,
+      "reps": 10,
+      "peso": 42
+    },
+    {
+      "data": "2025-09-12",
+      "treino": "B (Costas, Biceps)",
+      "exercicio": "Puxada Fechada pegada Neutra",
+      "serie": 1,
+      "reps": 9,
+      "peso": 38
+    },
+    {
+      "data": "2025-09-16",
+      "treino": "B (Costas, Biceps)",
+      "exercicio": "Puxada Fechada pegada Neutra",
+      "serie": 1,
+      "reps": 8,
+      "peso": 46
+    },
+    {
+      "data": "2025-09-02",
+      "treino": "C (Perna, Ombro)",
+      "exercicio": "Agachamento Maquina Hemley",
+      "serie": 1,
+      "reps": 12,
+      "peso": 60
+    },
+    {
+      "data": "2025-09-06",
+      "treino": "C (Perna, Ombro)",
+      "exercicio": "Agachamento Maquina Hemley",
+      "serie": 1,
+      "reps": 10,
+      "peso": 68
+    },
+    {
+      "data": "2025-09-11",
+      "treino": "C (Perna, Ombro)",
+      "exercicio": "Agachamento Maquina Hemley",
+      "serie": 1,
+      "reps": 8,
+      "peso": 65
+    },
+    {
+      "data": "2025-09-15",
+      "treino": "C (Perna, Ombro)",
+      "exercicio": "Agachamento Maquina Hemley",
+      "serie": 1,
+      "reps": 10,
+      "peso": 72
+    },
+    {
+      "data": "2025-08-04",
+      "treino": "C (Perna, Ombro)",
+      "exercicio": "Leg Press",
+      "serie": 1,
+      "reps": 15,
+      "peso": 120
+    },
+    {
+      "data": "2025-08-08",
+      "treino": "C (Perna, Ombro)",
+      "exercicio": "Leg Press",
+      "serie": 1,
+      "reps": 12,
+      "peso": 140
+    },
+    {
+      "data": "2025-08-13",
+      "treino": "C (Perna, Ombro)",
+      "exercicio": "Leg Press",
+      "serie": 1,
+      "reps": 10,
+      "peso": 130
+    },
+    {
+      "data": "2025-08-18",
+      "treino": "C (Perna, Ombro)",
+      "exercicio": "Leg Press",
+      "serie": 1,
+      "reps": 12,
+      "peso": 150
     }
   ]
 }
