@@ -1,0 +1,170 @@
+{
+  "exercicios": [
+    {
+      "treino": "Superiores",
+      "exercicio": "Supino Reto com Halteres"
+    },
+    {
+      "treino": "Superiores",
+      "exercicio": "Graviton Neutro"
+    },
+    {
+      "treino": "Superiores",
+      "exercicio": "Rosca direta no Banco 90Graus"
+    },
+    {
+      "treino": "Superiores",
+      "exercicio": "Triceps Coice"
+    },
+    {
+      "treino": "Superiores",
+      "exercicio": "Puxada Serratio Marquina Articulada"
+    },
+    {
+      "treino": "A (Peito, Triceps)",
+      "exercicio": "Supino Reto Maquina"
+    },
+    {
+      "treino": "A (Peito, Triceps)",
+      "exercicio": "Supino Inclinado com Halteres"
+    },
+    {
+      "treino": "A (Peito, Triceps)",
+      "exercicio": "Cruxifixo na Maquina"
+    },
+    {
+      "treino": "A (Peito, Triceps)",
+      "exercicio": "Supino Declinado maquina"
+    },
+    {
+      "treino": "B (Costas, Biceps)",
+      "exercicio": "Puxada Maquina Articulada"
+    },
+    {
+      "treino": "B (Costas, Biceps)",
+      "exercicio": "Puxada Fechada pegada Neutra"
+    },
+    {
+      "treino": "B (Costas, Biceps)",
+      "exercicio": "Remada Aberta no Cabo"
+    },
+    {
+      "treino": "B (Costas, Biceps)",
+      "exercicio": "Cavalo na Maquina"
+    },
+    {
+      "treino": "B (Costas, Biceps)",
+      "exercicio": "Rosca Direta na Barra"
+    },
+    {
+      "treino": "B (Costas, Biceps)",
+      "exercicio": "Rosca Alternada com Halteres"
+    },
+    {
+      "treino": "B (Costas, Biceps)",
+      "exercicio": "Rosca Corda no Cabo"
+    },
+    {
+      "treino": "A (Peito, Triceps)",
+      "exercicio": "Frances com Halteres"
+    },
+    {
+      "treino": "A (Peito, Triceps)",
+      "exercicio": "Triceps Testa com halteres"
+    },
+    {
+      "treino": "A (Peito, Triceps)",
+      "exercicio": "Triceps Pulley com Barra W"
+    },
+    {
+      "treino": "C (Perna, Ombro)",
+      "exercicio": "Agachamento Maquina Hemley"
+    },
+    {
+      "treino": "C (Perna, Ombro)",
+      "exercicio": "Leg Press"
+    },
+    {
+      "treino": "C (Perna, Ombro)",
+      "exercicio": "Abdutora"
+    },
+    {
+      "treino": "C (Perna, Ombro)",
+      "exercicio": "Adutora"
+    },
+    {
+      "treino": "C (Perna, Ombro)",
+      "exercicio": "Cadeira Flexora"
+    },
+    {
+      "treino": "C (Perna, Ombro)",
+      "exercicio": "Cadeira Extensora"
+    },
+    {
+      "treino": "C (Perna, Ombro)",
+      "exercicio": "Elevação de Panturrilha"
+    },
+    {
+      "treino": "C (Perna, Ombro)",
+      "exercicio": "Elevação Lateral"
+    },
+    {
+      "treino": "C (Perna, Ombro)",
+      "exercicio": "Elevação Frontal"
+    },
+    {
+      "treino": "Superiores",
+      "exercicio": "Desenvolvimento"
+    }
+  ],
+  "registros": [
+    {
+      "data": "2025-08-25",
+      "treino": "Superiores",
+      "exercicio": "Supino Reto com Halteres",
+      "serie": 1,
+      "reps": 10,
+      "peso": 8
+    },
+    {
+      "data": "2025-08-25",
+      "treino": "Superiores",
+      "exercicio": "Supino Reto com Halteres",
+      "serie": 2,
+      "reps": 10,
+      "peso": 9
+    },
+    {
+      "data": "2025-08-25",
+      "treino": "Superiores",
+      "exercicio": "Supino Reto com Halteres",
+      "serie": 3,
+      "reps": 10,
+      "peso": 10
+    },
+    {
+      "data": "2025-08-25",
+      "treino": "A (Peito, Triceps)",
+      "exercicio": "Supino Reto Maquina",
+      "serie": 1,
+      "reps": 10,
+      "peso": 30
+    },
+    {
+      "data": "2025-08-25",
+      "treino": "Superiores",
+      "exercicio": "Supino Reto com Halteres",
+      "serie": 2,
+      "reps": 10,
+      "peso": 35
+    },
+    {
+      "data": "2025-08-25",
+      "treino": "Superiores",
+      "exercicio": "Supino Reto com Halteres",
+      "serie": 3,
+      "reps": 10,
+      "peso": 40
+    }
+  ]
+}

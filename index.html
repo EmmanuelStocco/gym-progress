@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Controle de Treino</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 20px; }
+h2 { margin-top: 40px; }
+input, select, button { margin: 5px; }
+table { border-collapse: collapse; margin-top: 10px; }
+td, th { border: 1px solid #ccc; padding: 5px; }
+.exerciciosContainer { display: flex; gap: 20px; margin-top: 10px; }
+.colTreino { border: 1px solid #ccc; padding: 10px; flex: 1; min-width: 150px; background:#f9f9f9; }
+.colTreino h4 { margin-top: 0; }
+.colTreino ul { padding-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>Controle de Treino</h1>
+
+<h2>Cadastro de Exercício</h2>
+<label>Treino:</label><input type="text" id="treinoInput">
+<label>Exercício:</label><input type="text" id="exercicioInput">
+<button onclick="adicionarExercicio()">Adicionar</button>
+
+<div id="exerciciosContainer" class="exerciciosContainer"></div>
+
+<h2>Registrar Série</h2>
+<label>Data:</label><input type="date" id="dataInput">
+<label>Treino:</label>
+<select id="treinoSelect"></select>
+<label>Exercício:</label>
+<select id="exercicioSelect"></select>
+<label>Série:</label><input type="number" id="serieInput" min="1">
+<label>Reps:</label><input type="number" id="repsInput" min="1">
+<label>Peso (kg):</label><input type="number" id="pesoInput" step="0.1" min="0">
+<button onclick="registrarSerie()">Registrar</button>
+
+<table id="registroTable">
+<thead>
+<tr><th>Data</th><th>Treino</th><th>Exercício</th><th>Série</th><th>Reps</th><th>Peso</th></tr>
+</thead>
+<tbody></tbody>
+</table>
+
+<h2>Resumo</h2>
+<table id="resumoTable">
+<thead>
+<tr><th>Exercício</th><th>Máx Peso</th><th>Média Reps</th></tr>
+</thead>
+<tbody></tbody>
+</table>
+
+<script>
+let exercicios = [];
+let registros = [];
+
+// Carregar dados do JSON via backend
+async function carregarDados() {
+   console.log('Carregando dados do backend...');   
+   const res = await fetch('/api/dados');
+   const data = await res.json();
+   exercicios = data.exercicios || [];
+   registros = data.registros || [];
+   atualizarTabelas();
+}
+
+// Salvar dados no backend
+async function salvarDados() {
+    console.log('Salvando dados no backend...');
+    await fetch('/api/dados', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ exercicios, registros })
+    });
+}
+
+// Adicionar exercício
+function adicionarExercicio() {
+  const treino = document.getElementById('treinoInput').value.trim();
+  const exercicio = document.getElementById('exercicioInput').value.trim();
+  if (!treino || !exercicio) return alert('Preencha ambos campos');
+  exercicios.push({ treino, exercicio });
+  atualizarTabelas();
+  salvarDados();
+  document.getElementById('treinoInput').value = '';
+  document.getElementById('exercicioInput').value = '';
+}
+
+// Registrar série
+function registrarSerie() {
+  const data = document.getElementById('dataInput').value;
+  const treino = document.getElementById('treinoSelect').value;
+  const exercicio = document.getElementById('exercicioSelect').value;
+  const serie = parseInt(document.getElementById('serieInput').value);
+  const reps = parseInt(document.getElementById('repsInput').value);
+  const peso = parseFloat(document.getElementById('pesoInput').value);
+  if (!data || !treino || !exercicio || !serie || !reps || !peso) return alert('Preencha todos os campos');
+  registros.push({ data, treino, exercicio, serie, reps, peso });
+  atualizarTabelas();
+  salvarDados();
+  document.getElementById('serieInput').value = '';
+  document.getElementById('repsInput').value = '';
+  document.getElementById('pesoInput').value = '';
+}
+
+// Atualizar tabelas e selects
+function atualizarTabelas() {
+  // === Exercícios horizontais por treino ===
+  const container = document.getElementById('exerciciosContainer');
+  container.innerHTML = '';
+  const treinosUnicos = [...new Set(exercicios.map(e => e.treino))];
+
+  treinosUnicos.forEach(treino => {
+    const col = document.createElement('div');
+    col.className = 'colTreino';
+    const titulo = document.createElement('h4');
+    titulo.textContent = treino;
+    col.appendChild(titulo);
+
+    const ul = document.createElement('ul');
+    exercicios.filter(e => e.treino === treino)
+              .forEach(e => {
+                const li = document.createElement('li');
+                li.textContent = e.exercicio;
+                ul.appendChild(li);
+              });
+
+    col.appendChild(ul);
+    container.appendChild(col);
+  });
+
+  // === Selects ===
+  const treinoSelect = document.getElementById('treinoSelect');
+  const exercicioSelect = document.getElementById('exercicioSelect');
+  treinoSelect.innerHTML = '';
+  exercicioSelect.innerHTML = '';
+  treinosUnicos.forEach(t => treinoSelect.appendChild(new Option(t, t)));
+
+  exercicios.filter(e => e.treino === treinoSelect.value)
+            .forEach(e => exercicioSelect.appendChild(new Option(e.exercicio, e.exercicio)));
+
+  treinoSelect.onchange = () => {
+    exercicioSelect.innerHTML = '';
+    exercicios.filter(e => e.treino === treinoSelect.value)
+              .forEach(e => exercicioSelect.appendChild(new Option(e.exercicio, e.exercicio)));
+  };
+
+  // === Registros ===
+  const tbodyReg = document.querySelector('#registroTable tbody');
+  tbodyReg.innerHTML = '';
+  registros.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${r.data}</td><td>${r.treino}</td><td>${r.exercicio}</td><td>${r.serie}</td><td>${r.reps}</td><td>${r.peso}</td>`;
+    tbodyReg.appendChild(tr);
+  });
+
+  // === Resumo ===
+  const tbodyRes = document.querySelector('#resumoTable tbody');
+  tbodyRes.innerHTML = '';
+  const exerciciosUnicos = [...new Set(registros.map(r => r.exercicio))];
+  exerciciosUnicos.forEach(ex => {
+    const registrosEx = registros.filter(r => r.exercicio === ex);
+    const maxPeso = Math.max(...registrosEx.map(r => r.peso));
+    const avgReps = (registrosEx.reduce((sum,r)=>sum+r.reps,0)/registrosEx.length).toFixed(1);
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${ex}</td><td>${maxPeso}</td><td>${avgReps}</td>`;
+    tbodyRes.appendChild(tr);
+  });
+}
+
+carregarDados();
+</script>
+
+</body>
+</html>
